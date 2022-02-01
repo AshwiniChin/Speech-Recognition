@@ -1,8 +1,9 @@
 body
 {
 	text-align: center;
+    background: linear-gradient(to right,cyan,pink,aqua,yellowgreen);
 }
-span
+p
 {
 	font-size: 18px;
 	color: red;
@@ -11,4 +12,10 @@ canvas
 {
 	background: pink;
 	border-radius: 20px;
+}
+.heading{
+    width: 70%;    
+    font-size: 25px;
+    font-family: Georgia;
+    margin: 20px;
 }
