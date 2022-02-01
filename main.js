@@ -18,31 +18,31 @@ recognition.onresult = function (event) {
 
     console.log(event);
 
-    var content = event.results[0][0].transcript;
-
+    var contentOriginal = event.results[0][0].transcript;
+    content = contentOriginal.toLowerCase();
     document.getElementById("status").innerHTML = "The Speech has been recognized as: " + content;
-    if (content == "circle") {
+    if (content.includes("circle")) {
         x = Math.floor(Math.random() * 800 +5);
         y = Math.floor(Math.random() * 500 +5);
         document.getElementById("status").innerHTML = "Started drawing circle ";
         draw_circle = "set";
     }
-    if (content == "rectangle") {
+    if (content.includes("rectangle")) {
         x = Math.floor(Math.random() * 800+5);
         y = Math.floor(Math.random() * 500+5);
         document.getElementById("status").innerHTML = "Started drawing rectangle ";
         draw_rect = "set";
     }
-    if (content == "square") {
+    if (content.includes("square")) {
         x = Math.floor(Math.random() * 800+5);
         y = Math.floor(Math.random() * 500+5);
         document.getElementById("status").innerHTML = "Started drawing square ";
         draw_square = "set";
     }
-    if (content == "triangle") {
+    if (content.includes("triangle")) {
         x = Math.floor(Math.random() * 800 +5);
         y = Math.floor(Math.random() * 500 +5);
-        document.getElementById("status").innerHTML = "Started drawing circle ";
+        document.getElementById("status").innerHTML = "Started drawing triangle ";
         draw_triangle = "set";
     }
 }
@@ -74,7 +74,7 @@ function draw() {
     }
     if (draw_triangle == "set") {
         triangle(18, 18, 18, 360, 81, 360);
-        document.getElementById("status").innerHTML = "Square is drawn. ";
+        document.getElementById("status").innerHTML = "Triangle is drawn. ";
         draw_square = "";
     }
     
